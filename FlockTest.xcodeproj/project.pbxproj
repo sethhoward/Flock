@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C5C25D01178531C80060C334 /* Vector2D.m in Sources */ = {isa = PBXBuildFile; fileRef = C5C25D00178531C80060C334 /* Vector2D.m */; };
 		C5F15D98178484970065C4CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F15D97178484970065C4CC /* Foundation.framework */; };
 		C5F15D9A178484970065C4CC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F15D99178484970065C4CC /* CoreGraphics.framework */; };
 		C5F15D9C178484970065C4CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F15D9B178484970065C4CC /* UIKit.framework */; };
@@ -17,13 +18,14 @@
 		C5F15DAD178484970065C4CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5F15DAB178484970065C4CC /* Main.storyboard */; };
 		C5F15DB0178484970065C4CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F15DAF178484970065C4CC /* ViewController.m */; };
 		C5F15DB3178484970065C4CC /* MyScene.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F15DB2178484970065C4CC /* MyScene.m */; };
-		C5F15DB5178484970065C4CC /* Spaceship.png in Resources */ = {isa = PBXBuildFile; fileRef = C5F15DB4178484970065C4CC /* Spaceship.png */; };
 		C5F15DB7178484970065C4CC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5F15DB6178484970065C4CC /* Images.xcassets */; };
 		C5F15DBE178484970065C4CC /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F15DBD178484970065C4CC /* XCTest.framework */; };
 		C5F15DBF178484970065C4CC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F15D97178484970065C4CC /* Foundation.framework */; };
 		C5F15DC0178484970065C4CC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5F15D9B178484970065C4CC /* UIKit.framework */; };
 		C5F15DC8178484970065C4CC /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = C5F15DC6178484970065C4CC /* InfoPlist.strings */; };
 		C5F15DCA178484970065C4CC /* FlockTestTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F15DC9178484970065C4CC /* FlockTestTests.m */; };
+		C5F15DD617848C460065C4CC /* Boid.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F15DD517848C460065C4CC /* Boid.m */; };
+		C5F15DD91784D9F30065C4CC /* Flock.m in Sources */ = {isa = PBXBuildFile; fileRef = C5F15DD81784D9F30065C4CC /* Flock.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C5C25CFF178531C80060C334 /* Vector2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector2D.h; sourceTree = "<group>"; };
+		C5C25D00178531C80060C334 /* Vector2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Vector2D.m; sourceTree = "<group>"; };
 		C5F15D94178484970065C4CC /* FlockTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlockTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F15D97178484970065C4CC /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C5F15D99178484970065C4CC /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,13 +57,16 @@
 		C5F15DAF178484970065C4CC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		C5F15DB1178484970065C4CC /* MyScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MyScene.h; sourceTree = "<group>"; };
 		C5F15DB2178484970065C4CC /* MyScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MyScene.m; sourceTree = "<group>"; };
-		C5F15DB4178484970065C4CC /* Spaceship.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Spaceship.png; sourceTree = "<group>"; };
 		C5F15DB6178484970065C4CC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C5F15DBC178484970065C4CC /* FlockTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlockTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C5F15DBD178484970065C4CC /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		C5F15DC5178484970065C4CC /* FlockTestTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "FlockTestTests-Info.plist"; sourceTree = "<group>"; };
 		C5F15DC7178484970065C4CC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		C5F15DC9178484970065C4CC /* FlockTestTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FlockTestTests.m; sourceTree = "<group>"; };
+		C5F15DD417848C460065C4CC /* Boid.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Boid.h; path = Flock/Boid.h; sourceTree = "<group>"; };
+		C5F15DD517848C460065C4CC /* Boid.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Boid.m; path = Flock/Boid.m; sourceTree = "<group>"; };
+		C5F15DD71784D9F30065C4CC /* Flock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flock.h; path = Flock/Flock.h; sourceTree = "<group>"; };
+		C5F15DD81784D9F30065C4CC /* Flock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Flock.m; path = Flock/Flock.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +94,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C5C25CFE178531C80060C334 /* Vector2D-master */ = {
+			isa = PBXGroup;
+			children = (
+				C5C25CFF178531C80060C334 /* Vector2D.h */,
+				C5C25D00178531C80060C334 /* Vector2D.m */,
+			);
+			path = "Vector2D-master";
+			sourceTree = "<group>";
+		};
 		C5F15D8B178484970065C4CC = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +137,8 @@
 		C5F15D9F178484970065C4CC /* FlockTest */ = {
 			isa = PBXGroup;
 			children = (
+				C5C25CFE178531C80060C334 /* Vector2D-master */,
+				C5F15DD317848C0F0065C4CC /* Flock */,
 				C5F15DA8178484970065C4CC /* AppDelegate.h */,
 				C5F15DA9178484970065C4CC /* AppDelegate.m */,
 				C5F15DAB178484970065C4CC /* Main.storyboard */,
@@ -128,7 +146,6 @@
 				C5F15DAF178484970065C4CC /* ViewController.m */,
 				C5F15DB1178484970065C4CC /* MyScene.h */,
 				C5F15DB2178484970065C4CC /* MyScene.m */,
-				C5F15DB4178484970065C4CC /* Spaceship.png */,
 				C5F15DB6178484970065C4CC /* Images.xcassets */,
 				C5F15DA0178484970065C4CC /* Supporting Files */,
 			);
@@ -162,6 +179,17 @@
 				C5F15DC6178484970065C4CC /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C5F15DD317848C0F0065C4CC /* Flock */ = {
+			isa = PBXGroup;
+			children = (
+				C5F15DD417848C460065C4CC /* Boid.h */,
+				C5F15DD517848C460065C4CC /* Boid.m */,
+				C5F15DD71784D9F30065C4CC /* Flock.h */,
+				C5F15DD81784D9F30065C4CC /* Flock.m */,
+			);
+			name = Flock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,7 +270,6 @@
 			files = (
 				C5F15DA4178484970065C4CC /* InfoPlist.strings in Resources */,
 				C5F15DB7178484970065C4CC /* Images.xcassets in Resources */,
-				C5F15DB5178484970065C4CC /* Spaceship.png in Resources */,
 				C5F15DAD178484970065C4CC /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,8 +289,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C5F15DD617848C460065C4CC /* Boid.m in Sources */,
 				C5F15DB3178484970065C4CC /* MyScene.m in Sources */,
 				C5F15DB0178484970065C4CC /* ViewController.m in Sources */,
+				C5F15DD91784D9F30065C4CC /* Flock.m in Sources */,
+				C5C25D01178531C80060C334 /* Vector2D.m in Sources */,
 				C5F15DAA178484970065C4CC /* AppDelegate.m in Sources */,
 				C5F15DA6178484970065C4CC /* main.m in Sources */,
 			);
@@ -472,6 +502,7 @@
 				C5F15DCF178484970065C4CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C5F15DD0178484970065C4CC /* Build configuration list for PBXNativeTarget "FlockTestTests" */ = {
 			isa = XCConfigurationList;
@@ -480,6 +511,7 @@
 				C5F15DD2178484970065C4CC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

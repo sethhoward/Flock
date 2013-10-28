@@ -7,6 +7,12 @@
 //
 
 #import "MyScene.h"
+#import "Flock.h"
+#import "Boid.h"
+
+@interface MyScene ()
+@property (nonatomic, strong) Flock *flock;
+@end
 
 @implementation MyScene
 
@@ -14,18 +20,31 @@
     if (self = [super initWithSize:size]) {
         /* Setup your scene here */
         
-        self.backgroundColor = [SKColor colorWithRed:0.15 green:0.15 blue:0.3 alpha:1.0];
+        self.backgroundColor = [SKColor blackColor];
         
-        SKLabelNode *myLabel = [SKLabelNode labelNodeWithFontNamed:@"Chalkduster"];
-        
-        myLabel.text = @"Hello, World!";
-        myLabel.fontSize = 30;
-        myLabel.position = CGPointMake(CGRectGetMidX(self.frame),
-                                       CGRectGetMidY(self.frame));
-        
-        [self addChild:myLabel];
+        self.flock = [[Flock alloc] init];
+        Boid *boid = [self createBoidWithVelocity:NO];
+        [self.flock addBoid:boid];
+        [self addChild:boid];
     }
     return self;
+}
+
+- (UIColor *)randomColor {
+    UIColor *color = [UIColor colorWithRed:(arc4random() % 255) / 255. green:(arc4random() % 255) / 255. blue:(arc4random() % 255) / 255. alpha:1.];
+    return color;
+}
+
+- (Boid *)createBoidWithVelocity:(BOOL)hasVeclocity {
+    Boid *boid = [[Boid alloc] init];
+    boid.color = [self randomColor];
+    boid.size = CGSizeMake(10, 10);
+    
+    if (hasVeclocity) {
+        
+    }
+    
+    return boid;
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
@@ -34,20 +53,16 @@
     for (UITouch *touch in touches) {
         CGPoint location = [touch locationInNode:self];
         
-        SKSpriteNode *sprite = [SKSpriteNode spriteNodeWithImageNamed:@"Spaceship"];
-        
-        sprite.position = location;
-        
-        SKAction *action = [SKAction rotateByAngle:M_PI duration:1];
-        
-        [sprite runAction:[SKAction repeatActionForever:action]];
-        
-        [self addChild:sprite];
+        Boid *boid = [self createBoidWithVelocity:NO];
+        boid.position = location;
+        [self.flock addBoid:boid];
+        [self addChild:boid];
     }
 }
 
 -(void)update:(CFTimeInterval)currentTime {
     /* Called before each frame is rendered */
+    [self.flock update];
 }
 
 @end
